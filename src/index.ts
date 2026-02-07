@@ -10,6 +10,8 @@ import checkRoutes from './routes/check.js';
 
 const app = express();
 
+app.set('trust proxy', 1);  // 1 -> just trust the closest proxy
+
 app.use(helmet());
 app.use(express.json());
 
