@@ -59,7 +59,7 @@ export class UserService {
         } catch (err) {
             if (err instanceof AxiosError) {
                 if (err.code === 'ECONNABORTED') {
-                    throw new ApiError(408, 'INTERNAL_API_TIMEOUT', `Timeout setelah ${this.TIMEOUT}ms`);
+                    throw new ApiError(408, 'INTERNAL_API_TIMEOUT', 'Server sedang gangguan, silakan coba beberapa saat lagi');
                 }
                 if (err.response) {
                     const { status, data } = err.response;
